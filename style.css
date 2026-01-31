@@ -1,0 +1,138 @@
+/* ====== Reset ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ====== Background ====== */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #c7d2fe, #e9d5ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ====== App Card ====== */
+.app {
+    background: #fff;
+    width: 90%;
+    max-width: 600px;
+    padding: 35px 30px 40px;
+    border-radius: 28px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.2);
+    animation: fade 0.4s ease;
+}
+
+@keyframes fade {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* ====== Title ====== */
+.app h1 {
+    text-align: center;
+    font-size: 34px;
+    color: #6366f1;
+    margin-bottom: 8px;
+}
+
+/* ====== Counter ====== */
+#question-counter {
+    text-align: center;
+    font-size: 15px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* ====== Question ====== */
+.quiz h2 {
+    text-align: center;
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    color: #111;
+}
+
+/* ====== Answers Grid ====== */
+#answer-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+/* ====== Answer Buttons ====== */
+.btn {
+    background: #f8f8ff;
+    border: 2px solid transparent;
+    border-radius: 18px;
+    padding: 18px 14px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.25s;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.btn:hover:not([disabled]) {
+    background: #eef2ff;
+    border-color: #6366f1;
+    transform: translateY(-3px);
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+}
+
+/* ====== Correct / Incorrect ====== */
+.correct {
+    background: #dcfce7 !important;
+    border-color: #22c55e !important;
+}
+
+.incorrect {
+    background: #fee2e2 !important;
+    border-color: #ef4444 !important;
+}
+
+/* ====== Next Button ====== */
+#next-btn {
+    width: 100%;
+    margin-top: 30px;
+    padding: 18px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0 12px 30px rgba(99,102,241,0.4);
+}
+
+/* ====== Progress Bar ====== */
+#progress-container {
+    margin-top: 30px;
+    height: 8px;
+    width: 100%;
+    background: #e5e7eb;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #6366f1, #22c55e);
+    transition: width 0.3s;
+}
+
+/* ====== Mobile ====== */
+@media (max-width: 500px) {
+    #answer-buttons {
+        grid-template-columns: 1fr;
+    }
+}
